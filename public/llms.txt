@@ -1,0 +1,12 @@
+# Morse Academy
+
+> Learn Morse code in under 15 minutes with microlearning, an AI coach, and gamified practice.
+
+## Pages
+- [Dashboard](/): Progress, modules, badges
+- [Learn](/learn): Interactive A–Z flashcards with audio
+- [Practice](/practice): Adaptive single-letter drill
+- [Word Challenge](/word): Decode words at 3 difficulty levels
+- [Message Challenge](/message): Decode timed transmissions
+- [AI Coach](/coach): Personalized feedback and weak-letter analysis
+- [Certification Test](/test): 10-question final exam

@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WordRouteImport } from './routes/word'
+import { Route as TestRouteImport } from './routes/test'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PracticeRouteImport } from './routes/practice'
+import { Route as MessageRouteImport } from './routes/message'
+import { Route as LearnRouteImport } from './routes/learn'
+import { Route as CoachRouteImport } from './routes/coach'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WordRoute = WordRouteImport.update({
+  id: '/word',
+  path: '/word',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestRoute = TestRouteImport.update({
+  id: '/test',
+  path: '/test',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PracticeRoute = PracticeRouteImport.update({
+  id: '/practice',
+  path: '/practice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MessageRoute = MessageRouteImport.update({
+  id: '/message',
+  path: '/message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnRoute = LearnRouteImport.update({
+  id: '/learn',
+  path: '/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoachRoute = CoachRouteImport.update({
+  id: '/coach',
+  path: '/coach',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/coach': typeof CoachRoute
+  '/learn': typeof LearnRoute
+  '/message': typeof MessageRoute
+  '/practice': typeof PracticeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/test': typeof TestRoute
+  '/word': typeof WordRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/coach': typeof CoachRoute
+  '/learn': typeof LearnRoute
+  '/message': typeof MessageRoute
+  '/practice': typeof PracticeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/test': typeof TestRoute
+  '/word': typeof WordRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/coach': typeof CoachRoute
+  '/learn': typeof LearnRoute
+  '/message': typeof MessageRoute
+  '/practice': typeof PracticeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/test': typeof TestRoute
+  '/word': typeof WordRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/coach'
+    | '/learn'
+    | '/message'
+    | '/practice'
+    | '/sitemap.xml'
+    | '/test'
+    | '/word'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/coach'
+    | '/learn'
+    | '/message'
+    | '/practice'
+    | '/sitemap.xml'
+    | '/test'
+    | '/word'
+  id:
+    | '__root__'
+    | '/'
+    | '/coach'
+    | '/learn'
+    | '/message'
+    | '/practice'
+    | '/sitemap.xml'
+    | '/test'
+    | '/word'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CoachRoute: typeof CoachRoute
+  LearnRoute: typeof LearnRoute
+  MessageRoute: typeof MessageRoute
+  PracticeRoute: typeof PracticeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TestRoute: typeof TestRoute
+  WordRoute: typeof WordRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/word': {
+      id: '/word'
+      path: '/word'
+      fullPath: '/word'
+      preLoaderRoute: typeof WordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/test': {
+      id: '/test'
+      path: '/test'
+      fullPath: '/test'
+      preLoaderRoute: typeof TestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practice': {
+      id: '/practice'
+      path: '/practice'
+      fullPath: '/practice'
+      preLoaderRoute: typeof PracticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/message': {
+      id: '/message'
+      path: '/message'
+      fullPath: '/message'
+      preLoaderRoute: typeof MessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn': {
+      id: '/learn'
+      path: '/learn'
+      fullPath: '/learn'
+      preLoaderRoute: typeof LearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coach': {
+      id: '/coach'
+      path: '/coach'
+      fullPath: '/coach'
+      preLoaderRoute: typeof CoachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +197,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CoachRoute: CoachRoute,
+  LearnRoute: LearnRoute,
+  MessageRoute: MessageRoute,
+  PracticeRoute: PracticeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TestRoute: TestRoute,
+  WordRoute: WordRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
