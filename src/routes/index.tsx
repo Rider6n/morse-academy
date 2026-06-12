@@ -28,7 +28,7 @@ function Dashboard() {
   return (
     <div className="px-5 pt-6 [animation:slideUp_.4s_var(--ease-out-expo)_both]">
       <div className="mb-4">
-        <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Operator</p>
+        <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">OPERATOR</p>
         <h1 className="text-3xl font-black tracking-tight">Welcome back.</h1>
       </div>
 

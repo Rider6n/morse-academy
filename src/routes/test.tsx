@@ -77,7 +77,7 @@ function TestPage() {
           <p className="text-6xl font-black">{score}/10</p>
           <p className="mt-1 font-mono text-sm font-bold text-muted-foreground">{pct}%</p>
           <p className="mt-4 text-lg font-extrabold">
-            {pass ? "🏆 Certified Operator" : "Keep going, Operator."}
+            {pass ? "🏆 Certified OPERATOR" : "Keep going, OPERATOR."}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
             {pass
