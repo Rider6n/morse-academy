@@ -11,14 +11,15 @@ export const Route = createFileRoute("/")({
   component: Dashboard,
 });
 
-const MODULES = [
+type Module = { to: "/learn" | "/practice" | "/word" | "/message" | "/coach" | "/test"; title: string; desc: string; code: string; featured?: boolean };
+const MODULES: Module[] = [
   { to: "/learn", title: "Learn", desc: "Alphabet A–Z", code: "A-Z", featured: true },
   { to: "/practice", title: "Practice", desc: "Recall letters", code: ".." },
   { to: "/word", title: "Word", desc: "Decode words", code: "--" },
   { to: "/message", title: "Message", desc: "Timed messages", code: "//" },
   { to: "/coach", title: "Coach", desc: "AI feedback", code: "AI" },
   { to: "/test", title: "Test", desc: "Certification", code: "??" },
-] as const;
+];
 
 function Dashboard() {
   const { progress: p } = useHydratedProgress();
